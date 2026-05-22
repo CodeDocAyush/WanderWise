@@ -1,0 +1,339 @@
+/* ══════════════════════════════
+   THEME CONFIGURATION VARIABLES
+══════════════════════════════ */
+:root {
+  --bg-color:     #fdf6ee;
+  --bg-card:      #ffffff;
+  --bg-strip:     #f5e9d8;
+  --text-main:    #3d2b1f;
+  --text-muted:   #6b4f3e;
+  --text-light:   #b09480;
+  --terracotta:   #8B5E3C;
+  --terra-hover:  #7a5033;
+  --accent:       #C4854A;
+  --sand-input:   #fdf0e0;
+  --sand-border:  #e8d5c4;
+  --shadow:       0 8px 24px rgba(61,43,31,0.06);
+}
+
+/* Dark Mode Theme Inversions */
+[data-theme="dark"] {
+  --bg-color:     #141414;
+  --bg-card:      #1f1f1f;
+  --bg-strip:     #2b2420;
+  --text-main:    #f5e9d8;
+  --text-muted:   #cfbeaf;
+  --text-light:   #8f7e71;
+  --terracotta:   #d99c6c;
+  --terra-hover:  #e6ad81;
+  --accent:       #E8A96A;
+  --sand-input:   #2e2621;
+  --sand-border:  #3e342d;
+  --shadow:       0 8px 32px rgba(0,0,0,0.35);
+}
+
+/* ══════════════════════════════
+   RESET & STRUCTURES
+══════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ══════════════════════════════
+   HEADER NAVIGATION
+══════════════════════════════ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.nav-logo span { color: var(--accent); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.theme-btn {
+  background: var(--bg-strip);
+  border: 1px solid var(--sand-border);
+  color: var(--text-main);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  transition: all 0.2s ease;
+}
+.theme-btn:hover { transform: scale(1.05); background: var(--sand-border); }
+
+/* ══════════════════════════════
+   HERO BANNER & LOGIC CARD
+══════════════════════════════ */
+.hero {
+  text-align: center;
+  padding: 3.5rem 1.5rem 2rem 1.5rem;
+  max-width: 850px;
+  margin: 0 auto;
+}
+.hero-eyebrow {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.hero-title em { font-style: italic; font-weight: 400; color: var(--terracotta); }
+.hero-sub { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2.5rem; }
+
+.search-card {
+  background: var(--bg-card);
+  border-radius: 24px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--sand-border);
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+.search-card-label { font-size: 0.85rem; color: var(--text-light); font-weight: 600; margin-bottom: 0.5rem; }
+.search-row { display: flex; gap: 0.75rem; }
+.search-input {
+  flex: 1; border: none; background: var(--sand-input); padding: 1rem 1.25rem;
+  border-radius: 18px; font-family: inherit; font-size: 1.05rem; color: var(--text-main); outline: none;
+}
+.explore-btn {
+  background: var(--terracotta); color: #fff; border: none; padding: 0 1.75rem;
+  border-radius: 18px; font-family: inherit; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;
+}
+.explore-btn:hover { background: var(--terra-hover); }
+.search-error { color: #d9534f; font-size: 0.9rem; margin-top: 0.75rem; font-weight: 500; }
+
+.chips-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; }
+.chip {
+  background: var(--bg-strip); color: var(--text-muted); padding: 0.4rem 1rem;
+  border-radius: 50px; font-size: 0.88rem; font-weight: 500; display: flex; align-items: center; gap: 0.35rem; transition: all 0.2s;
+}
+.chip:hover { background: var(--terracotta); color: #fff; }
+
+.features-strip {
+  background: var(--bg-strip); border-top: 1px solid var(--sand-border); border-bottom: 1px solid var(--sand-border);
+  display: flex; justify-content: center; gap: 4rem; padding: 1rem; flex-wrap: wrap;
+}
+.feat-item { font-size: 0.88rem; color: var(--text-muted); font-weight: 600; display: flex; align-items: center; gap: 0.5rem; }
+.feat-item i { color: var(--accent); }
+
+/* ══════════════════════════════
+   GRID WRAPPERS (INDEX & CARDS)
+══════════════════════════════ */
+.main { flex: 1; max-width: 1100px; width: 100%; margin: 0 auto; padding: 2.5rem 1.5rem; }
+.welcome-section { text-align: center; }
+.welcome-title { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 0.5rem; }
+.welcome-text { color: var(--text-muted); margin-bottom: 2rem; }
+
+.popular-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.popular-card {
+  background: var(--bg-card); border: 1px solid var(--sand-border); border-radius: 12px;
+  padding: 1.5rem 1rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; box-shadow: var(--shadow); transition: all 0.2s;
+}
+.popular-card i { font-size: 1.75rem; color: var(--terracotta); }
+.popular-card span { font-weight: 600; font-size: 0.95rem; }
+.popular-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+/* ══════════════════════════════
+   GALLERY DISPLAY MODIFIERS
+══════════════════════════════ */
+.back-link { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--accent); font-weight: 600; margin-bottom: 1.5rem; }
+.dest-header h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 0.5rem; }
+.dest-desc { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2.5rem; }
+
+.section-title { font-family: 'Playfair Display', serif; font-size: 1.75rem; margin: 2rem 0 1rem 0; color: var(--terracotta); padding-bottom: 0.4rem; border-bottom: 1px dashed var(--sand-border); }
+
+/* Card Grids for Photo Layouts */
+.visual-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+.visual-card { background: var(--bg-card); border: 1px solid var(--sand-border); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); }
+.visual-img { width: 100%; height: 190px; object-fit: cover; background: var(--bg-strip); }
+.visual-info { padding: 1.25rem; }
+.visual-name { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 0.4rem; }
+.visual-text { color: var(--text-muted); font-size: 0.95rem; }
+
+/* Plain Lists for Info & Transport */
+.info-list { list-style: none; padding-left: 0; }
+.info-list li { background: var(--bg-card); border: 1px solid var(--sand-border); padding: 1rem 1.25rem; border-radius: 12px; margin-bottom: 0.75rem; display: flex; align-items: flex-start; gap: 0.75rem; box-shadow: var(--shadow); }
+.info-list li i { color: var(--accent); font-size: 1.2rem; margin-top: 0.2rem; }
+
+/* ══════════════════════════════
+   FOOTER
+══════════════════════════════ */
+.footer { background: #1a1a1a; color: rgba(255,255,255,0.55); text-align: center; padding: 1.5rem; font-size: 0.82rem; margin-top: auto; border-top: 1px solid #2a2a2a; }
+.footer strong { color: #fff; }
+.hidden { display: none !important; }
+
+/* ══════════════════════════════
+   MOBILE RESPONSIVE STYLES (Under 768px)
+══════════════════════════════ */
+@media screen and (max-width: 768px) {
+  
+  /* Navigation Bar Adjustments */
+  .navbar {
+    padding: 1rem;
+    flex-wrap: wrap; /* Allows logo and links to wrap if needed */
+    gap: 1rem;
+  }
+  .nav-links {
+    gap: 1.25rem;
+  }
+  .nav-logo {
+    font-size: 1.4rem;
+  }
+
+  /* Hero Section Typography */
+  .hero {
+    padding: 2rem 1rem 1.5rem 1rem;
+  }
+  .hero-title {
+    font-size: 2.2rem; /* Shrinks the main title so it fits beautifully on smaller glass displays */
+  }
+  .hero-sub {
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  /* Search Input Layout */
+  .search-card {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+  .search-row {
+    flex-direction: column; /* Stacks input text box on top of the search button */
+    gap: 0.5rem;
+  }
+  .search-input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+  }
+  .explore-btn {
+    width: 100%;
+    padding: 0.85rem;
+    justify-content: center; /* Centers text and icon inside the full-width mobile button */
+  }
+
+  /* Quick-Search Chips Row */
+  .chips-row {
+    gap: 0.4rem;
+  }
+  .chip {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  /* Feature Info Strip Hidden or Compacted for Cleaner Screen Space */
+  .features-strip {
+    gap: 1.25rem 2rem;
+    padding: 0.85rem;
+  }
+  .feat-item {
+    font-size: 0.8rem;
+  }
+
+  /* Main Dynamic Section Layouts */
+  .main {
+    padding: 1.5rem 1rem;
+  }
+  .welcome-title {
+    font-size: 1.6rem;
+  }
+
+  /* Homepage Featured Destintations Grid Modifiers */
+  .popular-grid {
+    grid-template-columns: repeat(2, 1fr); /* Scales from row blocks down to 2 columns on mobile devices */
+    gap: 0.75rem;
+  }
+  .popular-card {
+    padding: 1.25rem 0.75rem;
+  }
+  .popular-card i {
+    font-size: 1.5rem;
+  }
+
+  /* Destination Details Page Typography & Spacings */
+  .dest-header h1 {
+    font-size: 2rem;
+  }
+  .dest-desc {
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+  }
+  .section-title {
+    font-size: 1.4rem;
+    margin: 1.5rem 0 0.85rem 0;
+  }
+
+  /* Image Galleries & Hotel Card Grids */
+  .visual-grid {
+    grid-template-columns: 1fr; /* Transforms complex multi-column grids down into a singular stack layout */
+    gap: 1rem;
+  }
+  .visual-img {
+    height: 160px; /* Slight scaling down of image frame boundaries */
+  }
+  .visual-info {
+    padding: 1rem;
+  }
+
+  /* Fact Lists & Transport Block Margins */
+  .info-list li {
+    padding: 0.85rem 1rem;
+    font-size: 0.92rem;
+  }
+}
+
+/* Extra optimization for ultra-small screens */
+@media screen and (max-width: 480px) {
+  .popular-grid {
+    grid-template-columns: 1fr; /* True single column stack for exceptionally narrow phones */
+  }
+}

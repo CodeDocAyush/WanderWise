@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WanderWise — Local Travel Guide</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">Wander<span>Wise</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li>
+        <button id="darkModeToggle" class="theme-btn" title="Toggle Dark Mode">
+          <i class="ti ti-moon"></i>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-eyebrow">✦ Your Personal Travel Companion</div>
+    <h1 class="hero-title">Explore the world<br><em>freely &amp; confidently</em></h1>
+    <p class="hero-sub">No local guide needed. Just type a destination or click a card below to browse through everything — places, transport, stays, facts, and more.</p>
+
+    <div class="search-card">
+      <div class="search-card-label">
+        <i class="ti ti-map-pin" style="vertical-align:-2px;"></i> Where do you want to go?
+      </div>
+      <div class="search-row">
+        <input class="search-input" id="destInput" type="text" placeholder="e.g. Jaipur, Paris, Goa, Agra, Manali..." autocomplete="off" />
+        <button class="explore-btn" id="exploreBtn" onclick="startExplore()">
+          <i class="ti ti-compass"></i> Explore
+        </button>
+      </div>
+      <div id="searchError" class="search-error hidden">⚠️ Destination not found in our records. Try one of the 7 cities below!</div>
+    </div>
+
+    <div class="chips-row">
+      <a href="destinations/jaipur.html" class="chip"><i class="ti ti-building-castle"></i> Jaipur</a>
+      <a href="destinations/goa.html" class="chip"><i class="ti ti-beach"></i> Goa</a>
+      <a href="destinations/manali.html" class="chip"><i class="ti ti-mountain"></i> Manali</a>
+      <a href="destinations/agra.html" class="chip"><i class="ti ti-building-arch"></i> Agra</a>
+      <a href="destinations/paris.html" class="chip"><i class="ti ti-tower"></i> Paris</a>
+      <a href="destinations/kerala.html" class="chip"><i class="ti ti-trees"></i> Kerala</a>
+      <a href="destinations/leh_ladak.html" class="chip"><i class="ti ti-snowflake"></i> Leh Ladakh</a>
+    </div>
+  </section>
+
+  <div class="features-strip">
+    <div class="feat-item"><i class="ti ti-map-2"></i> Top Places</div>
+    <div class="feat-item"><i class="ti ti-route"></i> Transport &amp; Fares</div>
+    <div class="feat-item"><i class="ti ti-book"></i> Facts &amp; History</div>
+    <div class="feat-item"><i class="ti ti-bed"></i> Stay Options</div>
+  </div>
+
+  <main class="main">
+    <div class="welcome-section">
+      <h2 class="welcome-title">Featured Travel Directories</h2>
+      <p class="welcome-text">Select a location to pull up a full breakdown displaying multiple photos and stay listings.</p>
+
+      <div class="popular-grid">
+        <a href="destinations/jaipur.html" class="popular-card">
+          <i class="ti ti-building-castle"></i>
+          <span>Jaipur</span>
+        </a>
+        <a href="destinations/goa.html" class="popular-card">
+          <i class="ti ti-beach"></i>
+          <span>Goa</span>
+        </a>
+        <a href="destinations/manali.html" class="popular-card">
+          <i class="ti ti-mountain"></i>
+          <span>Manali</span>
+        </a>
+        <a href="destinations/agra.html" class="popular-card">
+          <i class="ti ti-building-arch"></i>
+          <span>Agra</span>
+        </a>
+        <a href="destinations/paris.html" class="popular-card">
+          <i class="ti ti-tower"></i>
+          <span>Paris</span>
+        </a>
+        <a href="destinations/kerala.html" class="popular-card">
+          <i class="ti ti-trees"></i>
+          <span>Kerala</span>
+        </a>
+        <a href="destinations/leh_ladak.html" class="popular-card">
+          <i class="ti ti-snowflake"></i>
+          <span>Leh Ladakh</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <strong>WanderWise</strong> — Travel Guide Database &nbsp;·&nbsp; Built with ❤️ for independent travellers
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
